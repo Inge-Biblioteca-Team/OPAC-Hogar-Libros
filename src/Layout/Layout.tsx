@@ -10,27 +10,28 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Navbar.Brand href="/" className=" my-2 space-x-2">
           <FontAwesomeIcon
             icon={faBookOpen}
-            className="text-white h-10 w-10 md:hidden lg:table-cell max-sm:hidden cursor-pointer"
+            className="text-white h-10 w-10 max-md:hidden lg:table-cell max-sm:hidden cursor-pointer"
           />
-          <span className="self-center whitespace-nowrap text-4xl font-semibold">
+          <span className="self-center whitespace-nowrap text-4xl font-semibold max-sm:text-base max-md:text-2xl">
             Biblioteca Pública Municipal de Nicoya
           </span>
         </Navbar.Brand>
+        <Navbar.Toggle />
         <Navbar.Collapse>
           <Navbar.Link
-            className="text-white  text-xl hover:scale-110 hover:!text-white hover:underline "
+            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
           >
             Asistencia
           </Navbar.Link>
           <Navbar.Link
             href="Equipo-computo"
-            className="text-white  text-xl hover:scale-110 hover:!text-white hover:underline "
+            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
           >
             Equipo de computo
           </Navbar.Link>
           <Navbar.Link
             href="Libros"
-            className="text-white  text-xl hover:scale-110 hover:!text-white hover:underline "
+            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
           >
             Libros
           </Navbar.Link>
