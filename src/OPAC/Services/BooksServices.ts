@@ -26,6 +26,33 @@ const getColection = async (
     }
   };
 
+  const getBooks = async (
+    page: number,
+    limit: number,
+    title?: string,
+    author?: string,
+    year?: number,
+    category?: string,
+  ) => {
+    try {
+      const params: { [key: string]: string | number | undefined } = {
+        page,
+        limit,
+      };
+  
+      if (title) params.title = title;
+      if (author) params.author = author;
+      if (year) params.year = Number(year);
+      if (category) params.category = category;
+  
+      const response = await api.get("/books/opac/opac-filtro", { params });
+      return response.data;
+    } catch (error) {
+      console.error("Error al obtener los libros:", error);
+      throw error;
+    }
+  };
+
   const getCategoriesNames =async()=>{
     try{
       const response = await api.get("/books/Categories");
@@ -36,4 +63,4 @@ const getColection = async (
     }
   }
 
-  export {getColection, getCategoriesNames}
+  export {getColection, getCategoriesNames,getBooks}

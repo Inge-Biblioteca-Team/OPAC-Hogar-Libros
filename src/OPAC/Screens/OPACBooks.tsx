@@ -2,21 +2,21 @@
 import { Button, Label, Pagination, Sidebar, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { getCategoriesNames, getColection } from "../Services/BooksServices";
+import { getBooks, getCategoriesNames } from "../Services/BooksServices";
 import OPACGridFBooks from "../Components/OPACGridFBooks";
 import Loader from "../Assets/LoaderOPAC.gif";
-import { Catalog } from "../Types/BooksTypes";
+
 
 const OPACBooks = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [Author, setAuthor] = useState<string>("");
-  const [publishYear, setPublishYear] = useState<string>("");
+  const [publishYear, setPublishYear] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
 
-  const { data: catalog, isLoading } = useQuery<Catalog, Error>(
+  const { data: catalog, isLoading } = useQuery(
     ["OPACSearch", page, title, Author, publishYear, selectedCategory],
-    () => getColection(page, 20, title, Author, publishYear, selectedCategory),
+    () => getBooks(page, 20, title, Author, publishYear, selectedCategory),
     {
       staleTime: 5000,
     }
@@ -42,7 +42,7 @@ const OPACBooks = () => {
     setSelectedCategory("");
     setTitle("");
     setAuthor("");
-    setPublishYear("");
+    setPublishYear(0);
     setPage(1);
   };
 
@@ -109,7 +109,7 @@ const OPACBooks = () => {
                   <Label value="Año de publicación" />
                   <TextInput
                     onChange={(event) => {
-                      setPublishYear(event?.target.value), setPage(1);
+                      setPublishYear(Number(event?.target.value)), setPage(1);
                     }}
                   />
                 </Sidebar.Item>

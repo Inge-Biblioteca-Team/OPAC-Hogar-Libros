@@ -15,10 +15,7 @@ export type Book = {
   Status: boolean;
 };
 
-export type Catalog = {
-  data: Book[];
-  count: number;
-};
+
 
 export type BookLeading = {
   userCedula: string;
