@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popover } from "flowbite-react";
 import OPACButtonAccionsWS from "../Components/OPACButtonAccionsWS";
 import { GetStatus } from "../Services/SvComputerLoan";
+import Loader from "../Assets/LoaderOPAC.gif";
 
 const OPACComputers = () => {
   type ComputerStatus = {
@@ -17,7 +18,7 @@ const OPACComputers = () => {
     Mantenimiento: "text-yellow-500",
   };
 
-  const { data: computers } = useQuery<ComputerStatus[], Error>(
+  const { data: computers, isLoading } = useQuery<ComputerStatus[], Error>(
     ["WSStatus"],
     () => GetStatus(),
     {
@@ -27,6 +28,14 @@ const OPACComputers = () => {
 
   return (
     <>
+      {isLoading && (
+        <div className="w-full flex items-center justify-center">
+          <figure>
+            <img width={400} src={Loader} alt="...Cargando" />
+            <figcaption className="text-center">...Cargando</figcaption>
+          </figure>
+        </div>
+      )}
       <main>
         <div className=" w-full flex items-center justify-center mt-12">
           <div className="grid grid-cols-4 gap-26 w-4/5">
