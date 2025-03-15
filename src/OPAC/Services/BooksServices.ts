@@ -18,7 +18,7 @@ const getColection = async (
       if (year) params.PublishedYear = year;
       if (category) params.ShelfCategory = category;
   
-      const response = await api.get("books", { params });
+      const response = await api.get("books/opac/opac-filtro", { params });
       return response.data;
     } catch (error) {
       console.error(error);

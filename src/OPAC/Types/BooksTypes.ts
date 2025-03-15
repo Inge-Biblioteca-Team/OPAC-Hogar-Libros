@@ -17,7 +17,7 @@ export type Book = {
 
 export type Catalog = {
   data: Book[];
-  count: number;
+  total: number;
 };
 
 

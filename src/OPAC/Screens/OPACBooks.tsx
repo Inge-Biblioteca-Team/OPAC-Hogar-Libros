@@ -51,7 +51,7 @@ const OPACBooks = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const MaxPage = Math.ceil((catalog?.count ?? 0) / 40);
+  const MaxPage = Math.ceil((catalog?.total ?? 0) / 40);
 
   return (
     <>
