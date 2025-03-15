@@ -1,6 +1,5 @@
 import { Book } from "../Types/BooksTypes";
 
-
 const OPACBookCard = ({ book }: { book: Book }) => {
   return (
     <>
@@ -12,10 +11,14 @@ const OPACBookCard = ({ book }: { book: Book }) => {
         />
         <figcaption className=" bg-white w-52 h-32 pl-1 pt-2 rounded-b-md overflow-clip">
           <p>
-           <span className=" w-48 line-clamp-1">Author: {book.Author}</span>
+            <span className=" w-48 line-clamp-1">Autor: {book.Author}</span>
             <span className=" w-52  line-clamp-1">Titulo: {book.Title}</span>
-            <span className=" w-52  line-clamp-1">Año de publicación: {book.PublishedYear || 'Desconocido'}</span>
-            <span className=" w-52  line-clamp-1">Disponibilidad: {book.Status? "Disponible":"En uso"}</span>
+            <span className=" w-52  line-clamp-1">
+              Año de publicación: {book.PublishedYear || "Desconocido"}
+            </span>
+            <span className=" w-52  line-clamp-1">
+              Disponibilidad: {book.Status ? "Disponible" : "En uso"}
+            </span>
           </p>
         </figcaption>
       </figure>
