@@ -1,9 +1,12 @@
 import { Navbar } from "flowbite-react";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import OPACAsistencia from "../OPAC/Components/OPACAsistencia";
+import { NavLink} from "react-router";
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       <Navbar className=" text-white bg-Body" fluid>
@@ -18,19 +21,20 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Navbar.Link
-            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
-          >
-            Asistencia
+          <Navbar.Link className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline ">
+            <span onClick={() => setOpen(true)}>Asistencia</span>
           </Navbar.Link>
           <Navbar.Link
-            href="Equipo-computo"
+            as={NavLink}
+            to="/Equipo-computo"
+            activeClassName=" text-black"
             className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
           >
             Equipo de computo
           </Navbar.Link>
           <Navbar.Link
-            href="Libros"
+            as={NavLink}
+            to="/Libros"
             className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
           >
             Libros
@@ -38,6 +42,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </Navbar.Collapse>
       </Navbar>
       <main>{children}</main>
+      <OPACAsistencia open={open} setOpen={setOpen} />
     </>
   );
 };
