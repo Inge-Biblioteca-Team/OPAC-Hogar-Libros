@@ -5,7 +5,7 @@ const getColection = async (
     limit: number,
     title?: string,
     author?: string,
-    year?: string,
+    year?: number,
     category?: string,
   ) => {
     try {

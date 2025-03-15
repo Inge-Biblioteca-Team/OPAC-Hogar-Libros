@@ -2,9 +2,10 @@
 import { Button, Label, Pagination, Sidebar, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { getBooks, getCategoriesNames } from "../Services/BooksServices";
+import { getCategoriesNames, getColection } from "../Services/BooksServices";
 import OPACGridFBooks from "../Components/OPACGridFBooks";
 import Loader from "../Assets/LoaderOPAC.gif";
+import { Catalog } from "../Types/BooksTypes";
 
 
 const OPACBooks = () => {
@@ -14,9 +15,9 @@ const OPACBooks = () => {
   const [publishYear, setPublishYear] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
 
-  const { data: catalog, isLoading } = useQuery(
+  const { data: catalog, isLoading } = useQuery<Catalog>(
     ["OPACSearch", page, title, Author, publishYear, selectedCategory],
-    () => getBooks(page, 20, title, Author, publishYear, selectedCategory),
+    () => getColection(page, 10, title, Author, publishYear, selectedCategory),
     {
       staleTime: 5000,
     }
