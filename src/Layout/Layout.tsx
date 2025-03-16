@@ -21,37 +21,20 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Navbar.Link
-<<<<<<< Updated upstream
-            className=" cursor-pointer
-          text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
-=======
-            className="text-white max-sm:text-base max-md:text-lg text-xl hover:!text-white  hover:scale-110 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-white after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full"
->>>>>>> Stashed changes
-          >
+          <Navbar.Link className="text-white max-sm:text-base max-md:text-lg text-xl hover:!text-white  hover:scale-110 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-white after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full">
             <span onClick={() => setOpen(true)}>Asistencia</span>
           </Navbar.Link>
           <Navbar.Link
-<<<<<<< Updated upstream
             as={NavLink}
             to="/Equipo-computo"
-            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline"
-=======
-            href="Equipo-computo"
             className="text-white max-sm:text-base max-md:text-lg text-xl hover:!text-white  hover:scale-110 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-white after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full "
->>>>>>> Stashed changes
           >
             Equipo de cómputo
           </Navbar.Link>
           <Navbar.Link
-<<<<<<< Updated upstream
             as={NavLink}
             to="/Libros"
-            className="text-white max-sm:text-base max-md:text-lg text-xl hover:scale-110 hover:!text-white hover:underline "
-=======
-            href="Libros"
             className="text-white max-sm:text-base max-md:text-lg text-xl hover:!text-white  hover:scale-110 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-white after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full "
->>>>>>> Stashed changes
           >
             Libros
           </Navbar.Link>
