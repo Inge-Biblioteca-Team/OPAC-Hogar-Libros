@@ -24,7 +24,7 @@ const OPACHome = () => {
           >
             <OPACCard
               Icon={faBookOpen}
-              Title="catalogo de libros"
+              Title="Cátalogo de libros"
               Message="Explora la amplia cantidad de diversos libros"
               Path="Libros"
             />

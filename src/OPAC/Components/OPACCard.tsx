@@ -27,10 +27,10 @@ const OPACCard = ({
         <p>
           <span className=" text-lg font-bold">{Title}</span>
           <br />
-          <span className="">{Message}</span>
+          <span className="2xl:text-3xl lg:text-base">{Message}</span>
         </p>
         <Link to={Path} className=" underline hover:text-gray-400">
-          Ver mas
+          Ver más
         </Link>
       </figcaption>
     </figure>
