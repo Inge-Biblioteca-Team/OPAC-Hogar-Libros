@@ -26,9 +26,9 @@ const OPACCard = ({
       />{" "}
       <figcaption className="text-center flex flex-col flex-grow justify-around ">
         <p>
-          <span className=" text-lg font-bold">{Title}</span>
+          <span className="text-5xl text-center max-sm:text-2xl">{Title}</span>
           <br />
-          <span className="2xl:text-3xl lg:text-base">{Message}</span>
+          <span className="text-3xl text-center max-sm:text-lg">{Message}</span>
         </p>
         <Link to={Path} className=" underline hover:text-gray-400">
           Ver más
