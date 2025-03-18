@@ -69,7 +69,7 @@ const OPACBooks = () => {
             
            h-[91vh]
           !w-[45vh]
-          max-sm:w-full md:w-full lg:w-auto xl:w-auto xl:p-0 2xl:w-auto 2xl:p-0 lg:p-0 md:pl-2 md:pr-2 max-sm:pl-2 max-sm:pr-2"
+          max-sm:w-full md:w-full lg:h-auto xl:w-auto xl:p-0 2xl:w-auto 2xl:p-0 lg:p-0 md:pl-2 md:pr-2 max-sm:pl-2 max-sm:pr-2"
           >
             <Sidebar.Items>
               <Sidebar.ItemGroup>
@@ -121,8 +121,6 @@ const OPACBooks = () => {
                     }}
                   />
                 </Sidebar.Item>
-              </Sidebar.ItemGroup>
-              <Sidebar.ItemGroup>
                 <Sidebar.Item>
                   <Button
                     color={"blue"}

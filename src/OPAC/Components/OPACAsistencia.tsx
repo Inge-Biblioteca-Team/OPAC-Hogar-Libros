@@ -70,7 +70,7 @@ const OPACAsistencia = ({ open, setOpen }: ModalOpen) => {
             />
           </div>
           <div>
-            <label className="block mb-2">Nombre Completo</label>
+            <label className="block mb-2">Nombre completo</label>
             <TextInput
               disabled={isLoading}
               placeholder={`${
