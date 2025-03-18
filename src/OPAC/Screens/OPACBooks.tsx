@@ -1,11 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { Button, Label, Pagination, Sidebar, TextInput } from "flowbite-react";
+import {
+  Button,
+  Label,
+  Pagination,
+  Select,
+  Sidebar,
+  TextInput,
+} from "flowbite-react";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { getCategoriesNames, getColection } from "../Services/BooksServices";
 import OPACGridFBooks from "../Components/OPACGridFBooks";
 import Loader from "../Assets/LoaderOPAC.gif";
 import { Catalog } from "../Types/BooksTypes";
+import { FaRemoveFormat } from "react-icons/fa";
 
 const OPACBooks = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -63,13 +71,71 @@ const OPACBooks = () => {
           </figure>
         </div>
       ) : (
-        <main className=" flex max-sm:flex-col md:flex-col xl:flex-row 2xl:flex-row lg:flex-row w-full">
+        <main className=" flex w-full max-xl:flex-col">
+          <div className=" hidden max-xl:flex items-end gap-2 justify-center pt-3">
+            <div>
+              <Label value="Categoria" />
+              <Select className="custom-Select">
+                <>
+                  {categories &&
+                    categories
+                      .filter((category) => category !== "")
+                      .map((category) => (
+                        <option
+                          key={category}
+                          className={
+                            selectedCategory === category
+                              ? "bg-Body-light text-white hover:text-black hover:bg-Body-light cursor-pointer"
+                              : " cursor-pointer hover:bg-slate-200"
+                          }
+                          data-value={category}
+                        >
+                          <span>{category}</span>
+                        </option>
+                      ))}
+                </>
+              </Select>
+            </div>
+            <div>
+              <Label value="Título" />
+              <TextInput
+                onChange={(event) => {
+                  setTitle(event?.target.value), setPage(1);
+                }}
+              />
+            </div>
+            <div>
+              <Label value="Autor" />
+              <TextInput
+                onChange={(event) => {
+                  setAuthor(event?.target.value), setPage(1);
+                }}
+              />
+            </div>
+            <div>
+              <Label value="Año de publicación" />
+              <TextInput
+                onChange={(event) => {
+                  setPublishYear(Number(event?.target.value)), setPage(1);
+                }}
+              />
+            </div>
+            <div>
+              <Button color={"blue"} className=" w-full" onClick={resetState}>
+                <span className=" max-lg:hidden">Borrar filtros
+                  </span>
+                  <FaRemoveFormat className="max-lg:block hidden" size={20} />
+                  
+              </Button>
+            </div>
+          </div>
           <Sidebar
             className="
-            
+          max-xl:hidden
+          2xl:!w-[45vh]
            h-[91vh]
-          !w-[45vh]
-          max-sm:w-full md:w-full lg:h-auto xl:w-auto xl:p-0 2xl:w-auto 2xl:p-0 lg:p-0 md:pl-2 md:pr-2 max-sm:pl-2 max-sm:pr-2"
+          !w-[50vh]
+          "
           >
             <Sidebar.Items>
               <Sidebar.ItemGroup>
@@ -142,9 +208,9 @@ const OPACBooks = () => {
                 </figure>
               </div>
             ) : (
-              <div className="w-full max-sm:pt-8 max-sm:pl-2 max-sm:pr-2 flex flex-col justify-between 2xl:pt-2">
+              <div className="w-full flex flex-col gap-2 pt-3 2xl:pt-4">
                 {catalog && <OPACGridFBooks colection={catalog} />}
-                <div className=" flex items-center max w-full justify-center 2xl:pb-2 ">
+                <div className=" flex items-center max w-full justify-center ">
                   <Pagination
                     previousLabel="Anterior"
                     nextLabel="Siguiente"
