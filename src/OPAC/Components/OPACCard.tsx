@@ -17,7 +17,8 @@ const OPACCard = ({
   return (
     <figure
       className="bg-Body text-white flex flex-col gap-5 items-center justify-center rounded-md
-     max-sm:justify-start max-sm:px-2  max-sm:text-sm p-4 lg:h-full xl:h-full 2xl:h-full"
+     max-sm:justify-start max-sm:px-2  max-sm:text-sm p-4 md:justify-start md:px-4 md:text-base 
+    lg:h-full xl:h-full 2xl:h-full"
     >
       <FontAwesomeIcon
         icon={Icon}

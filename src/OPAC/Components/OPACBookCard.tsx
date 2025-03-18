@@ -7,7 +7,8 @@ const OPACBookCard = ({ book }: { book: Book }) => {
         <img
           src={book.Cover}
           alt={book.Title}
-          className=" rounded-md h-52 w-52 rounded-b-none max-sm:w-full"
+          className="object-fill hover:shadow-md hover:drop-shadow-lg hover:shadow-blue-950 rounded-t-md h-96 w-80 
+          max-sm:h-48 max-sm:rounded-md"
         />
         <figcaption className=" bg-white w-52 h-32 pl-1 pt-2 rounded-b-md overflow-clip">
           <p className=" cursor-default">
