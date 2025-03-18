@@ -99,7 +99,7 @@ const OPACAsistencia = ({ open, setOpen }: ModalOpen) => {
                     htmlFor="gender-m"
                     className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
-                    M
+                    Masculino
                   </label>
                 </div>
               </li>
@@ -116,7 +116,7 @@ const OPACAsistencia = ({ open, setOpen }: ModalOpen) => {
                     htmlFor="gender-f"
                     className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
-                    F
+                    Femenino
                   </label>
                 </div>
               </li>
@@ -138,7 +138,7 @@ const OPACAsistencia = ({ open, setOpen }: ModalOpen) => {
                     htmlFor="edad-0-6"
                     className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
-                    0 a 6
+                    0 a 5
                   </label>
                 </div>
               </li>
