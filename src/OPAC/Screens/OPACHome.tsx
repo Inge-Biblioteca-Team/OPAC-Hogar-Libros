@@ -19,8 +19,7 @@ const OPACHome = () => {
         <OPACBanner />
         <div className="m-2 lg:m-0  lg:w-11/12">
           <div
-            className="grid max-sm:grid-cols-2 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3 lg:pb-2
-        lg:h-60 2xl:h-96"
+            className="grid max-sm:grid-cols-2 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3 lg:pb-2 2xl:m-4 2xl:pt-6"
           >
             <OPACCard
               Icon={faBookOpen}

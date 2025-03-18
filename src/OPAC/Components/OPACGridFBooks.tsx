@@ -6,7 +6,7 @@ import OPACBookCard from "./OPACBookCard";
 const OPACGridFBooks = ({ colection }: { colection: Catalog }) => {
   return (
     <>
-      <div className="grid grid-cols-5 gap-4 max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:w-full items-center justify-center bg-gray-200 p-4">
+      <div className="flex flex-wrap gap-4 max-sm:gap-8 md:gap-16 lg:gap-4 xl:gap-4 2xl:gap-4 max-sm:w-full items-center justify-center">
         {colection.data.map((book) => (
           <OPACBookCard key={"Book" + book.BookCode} book={book} />
         ))}
