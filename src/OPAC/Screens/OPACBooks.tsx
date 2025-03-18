@@ -66,6 +66,7 @@ const OPACBooks = () => {
         <main className=" flex max-sm:flex-col md:flex-col xl:flex-row 2xl:flex-row lg:flex-row w-full">
           <Sidebar
             className="
+            
            h-[91vh]
           !w-[45vh]
           max-sm:w-full md:w-full lg:w-auto xl:w-auto xl:p-0 2xl:w-auto 2xl:p-0 lg:p-0 md:pl-2 md:pr-2 max-sm:pl-2 max-sm:pr-2"
@@ -143,9 +144,9 @@ const OPACBooks = () => {
                 </figure>
               </div>
             ) : (
-              <div className="w-full max-sm:pt-8 max-sm:pl-2 max-sm:pr-2 flex flex-col justify-between pt-4">
+              <div className="w-full max-sm:pt-8 max-sm:pl-2 max-sm:pr-2 flex flex-col justify-between 2xl:pt-2">
                 {catalog && <OPACGridFBooks colection={catalog} />}
-                <div className=" flex items-center max w-full justify-center pb-4 pt-3">
+                <div className=" flex items-center max w-full justify-center 2xl:pb-2 ">
                   <Pagination
                     previousLabel="Anterior"
                     nextLabel="Siguiente"
