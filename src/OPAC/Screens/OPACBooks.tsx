@@ -97,7 +97,7 @@ const OPACBooks = () => {
               </Sidebar.ItemGroup>
               <Sidebar.ItemGroup>
                 <Sidebar.Item>
-                  <Label value="Titulo" />
+                  <Label value="Título" />
                   <TextInput
                     onChange={(event) => {
                       setTitle(event?.target.value), setPage(1);
@@ -143,7 +143,7 @@ const OPACBooks = () => {
                 </figure>
               </div>
             ) : (
-              <div className=" w-full max-sm:pt-8 max-sm:pl-2 max-sm:pr-2 pt-2">
+              <div className="w-full max-sm:pt-8 max-sm:pl-2 max-sm:pr-2 flex flex-col justify-between pt-4">
                 {catalog && <OPACGridFBooks colection={catalog} />}
                 <div className=" flex items-center max w-full justify-center pb-4 pt-3">
                   <Pagination
