@@ -13,10 +13,10 @@ const getColection = async (
         page,
         limit,
       };
-      if (title) params.Title = title;
-      if (author) params.Author = author;
-      if (year) params.PublishedYear = year;
-      if (category) params.ShelfCategory = category;
+      if (title) params. title = title;
+      if (author) params.author = author;
+      if (year) params.publishedYear = year;
+      if (category) params.shelfCategory = category;
   
       const response = await api.get("books/opac/opac-filtro", { params });
       return response.data;
