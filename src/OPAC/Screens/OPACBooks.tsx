@@ -14,6 +14,7 @@ import OPACGridFBooks from "../Components/OPACGridFBooks";
 import Loader from "../Assets/LoaderOPAC.gif";
 import { Catalog } from "../Types/BooksTypes";
 import { FaRemoveFormat } from "react-icons/fa";
+import { PiMagnifyingGlassFill } from "react-icons/pi";
 
 const OPACBooks = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -122,10 +123,8 @@ const OPACBooks = () => {
             </div>
             <div>
               <Button color={"blue"} className=" w-full" onClick={resetState}>
-                <span className=" max-lg:hidden">Borrar filtros
-                  </span>
-                  <FaRemoveFormat className="max-lg:block hidden" size={20} />
-                  
+                <span className=" max-lg:hidden">Borrar filtros</span>
+                <FaRemoveFormat className="max-lg:block hidden" size={20} />
               </Button>
             </div>
           </div>
@@ -200,25 +199,38 @@ const OPACBooks = () => {
             </Sidebar.Items>
           </Sidebar>
           <>
-            {isLoading ? (
+            {isLoading && (
               <div className=" w-full flex items-center justify-center">
                 <figure>
                   <img width={400} src={Loader} alt="...Cargando" />
                   <figcaption className=" text-center">...Cargando</figcaption>
                 </figure>
               </div>
-            ) : (
+            )}
+            {!isLoading && (
               <div className="w-full flex flex-col gap-2 pt-3 2xl:pt-4">
-                {catalog && <OPACGridFBooks colection={catalog} />}
-                <div className=" flex items-center max w-full justify-center ">
-                  <Pagination
-                    previousLabel="Anterior"
-                    nextLabel="Siguiente"
-                    currentPage={page}
-                    totalPages={MaxPage}
-                    onPageChange={onPageChange}
-                  />
-                </div>
+                {!isLoading && catalog && catalog.total > 0 && (
+                  <>
+                    <OPACGridFBooks colection={catalog} />
+                    <div className=" flex items-center max w-full justify-center ">
+                      <Pagination
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"
+                        currentPage={page}
+                        totalPages={MaxPage}
+                        onPageChange={onPageChange}
+                      />
+                    </div>
+                  </>
+                )}
+                {!isLoading && (!catalog || catalog.total == 0) && (
+                  <div className=" w-full flex items-center justify-center mt-40 flex-col">
+                    <PiMagnifyingGlassFill className=" text-9xl text-red-800" />
+                    <figcaption className=" text-center text-2xl">
+                      Lo sentimos de momento no tenemos los libros que buscas.
+                    </figcaption>
+                  </div>
+                )}
               </div>
             )}
           </>
