@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Esto no se deside aun.com/sitemap.xml
