@@ -14,6 +14,7 @@ COPY . .
 
 # Argumentos para el build
 ARG VITE_BASE_URL
+ENV VITE_BASE_URL=$VITE_BASE_URL
 
 # Ejecutar build
 RUN npm run build
